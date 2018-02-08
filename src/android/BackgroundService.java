@@ -425,4 +425,7 @@ public abstract class BackgroundService extends Service {
 	
 	protected void onPauseComplete() {
 	}
+	
+	protected void onCleanup() {
+	}
 }
