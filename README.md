@@ -15,8 +15,13 @@ This repository provides the core functionality for the Background Service Plugi
 An example background service is provided in the https://github.com/Red-Folder/bgs-sample repository.
 
 ## Getting started
+
 To understand how to create your own background service it is advised that you read the following articles:
 
+* Install this plugin
+```
+cordova plugin add https://github.com/icecoolinux/bgs-core.git
+```
 * [Using the MyService Sample] (https://github.com/Red-Folder/bgs-core/wiki/Using-the-MyService-Sample)
 * [Build your own Background Service] (https://github.com/Red-Folder/bgs-core/wiki/Build-your-own-Background-Service)
 * [Build your own plugin] (https://github.com/Red-Folder/bgs-core/wiki/Build-your-own-plugin)
