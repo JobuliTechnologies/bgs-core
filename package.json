@@ -4,7 +4,7 @@
   "description": "Framework code that allows the development and operation of an Android Background Service.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Red-Folder/bgs-core.git"
+    "url": "git+https://github.com/icecoolinux/bgs-core.git"
   },
   "keywords": [
     "background",
