@@ -36,6 +36,12 @@
                     <action android:name="android.intent.action.BOOT_COMPLETED"></action>   
                 </intent-filter> 
             </receiver>
+                
+            <service android:name="com.red_folder.phonegap.plugin.backgroundservice.MyService">
+                <intent-filter>
+                    <action android:name="com.red_folder.phonegap.plugin.backgroundservice.MyService" />
+                </intent-filter>
+            </service>
             
         </config-file>
 
@@ -46,8 +52,8 @@
         <source-file src="src/android/PropertyHelper.java" target-dir="src/com/red_folder/phonegap/plugin/backgroundservice" />
         <source-file src="src/android/ReflectionHelper.java" target-dir="src/com/red_folder/phonegap/plugin/backgroundservice" />
         
-        <source-file src="aidl/android/BackgroundServiceApi.aidl" target-dir="src/com/red_folder/phonegap/plugin/backgroundservice" />
-        <source-file src="aidl/android/BackgroundServiceListener.aidl" target-dir="src/com/red_folder/phonegap/plugin/backgroundservice" />
+        <source-file src="aidl/android/BackgroundServiceApi.aidl" target-dir="app/src/main/aidl/com/red_folder/phonegap/plugin/backgroundservice" />
+        <source-file src="aidl/android/BackgroundServiceListener.aidl" target-dir="app/src/main/aidl/com/red_folder/phonegap/plugin/backgroundservice" />
 
     </platform>
 </plugin>
