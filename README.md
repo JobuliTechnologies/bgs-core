@@ -28,6 +28,16 @@ cordova plugin add https://github.com/icecoolinux/bgs-core.git
 
 Further documentation can be found at https://github.com/Red-Folder/bgs-core/wiki
 
+## Ionic plugin
+Adapted plugin for ionic https://github.com/felipe-ff/ionic-bgs-core (Thanks felipe-ff)
+
+* Add the plugin to your ionic project
+```
+ionic cordova plugin add https://github.com/felipe-ff/ionic-bgs-core
+```
+* Change the project id "io.ionic.starter" by your id.
+
+
 ## Older version
 This version of the plugin is intended to work with Cordova 3.0.0+
 
