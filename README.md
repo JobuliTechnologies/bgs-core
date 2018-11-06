@@ -2,8 +2,9 @@
 This is a fork from original project https://github.com/Red-Folder/bgs-core
 
 This fork add:
-*A cleanup method when the service is stopped.
-*MyService class example.
+
+* A cleanup method when the service is stopped.
+* MyService class example.
 
 
 # Background Service Plugin Core (bgs-core)
