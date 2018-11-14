@@ -12,24 +12,70 @@ This fork add:
 ## Quick summary
 This repository provides the core functionality for the Background Service Plugin for Cordova.  The functionality is not a complete plugin - it is intended to be extended by developers to create their own background service.
 
-An example background service is provided in the https://github.com/Red-Folder/bgs-sample repository.
 
 ## Getting started
-
-To understand how to create your own background service it is advised that you read the following articles:
 
 * Install this plugin
 ```
 cordova plugin add https://github.com/icecoolinux/bgs-core.git
 ```
+
+To understand how to create your own background service it is advised that you read the following articles:
+
 * [Using the MyService Sample] (https://github.com/Red-Folder/bgs-core/wiki/Using-the-MyService-Sample)
 * [Build your own Background Service] (https://github.com/Red-Folder/bgs-core/wiki/Build-your-own-Background-Service)
 * [Build your own plugin] (https://github.com/Red-Folder/bgs-core/wiki/Build-your-own-plugin)
 
 Further documentation can be found at https://github.com/Red-Folder/bgs-core/wiki
 
-## Ionic plugin
-Adapted plugin for ionic https://github.com/felipe-ff/ionic-bgs-core (Thanks felipe-ff)
+## Ionic
+
+### Simple example
+
+* Create an ionic project, install this plugin and add platform Android
+```
+ionic start myapp
+cd myapp
+ionic cordova plugin add https://github.com/icecoolinux/bgs-core.git
+ionic cordova platform add android
+```
+
+* Start the service from index.html, add:
+```
+  <script>
+   var myService;
+
+   document.addEventListener('deviceready', function() {
+      var serviceName = 'com.red_folder.phonegap.plugin.backgroundservice.MyService';
+      var factory = cordova.require('com.red_folder.phonegap.plugin.backgroundservice.BackgroundService');
+      myService = factory.create(serviceName);
+
+      myService.startService(function(r){getStatus()}, function(e){displayError(e)});
+   }, true);
+
+   function getStatus() {
+      myService.getStatus(function(r){displayResult(r)}, function(e){displayError(e)});
+   }
+
+   function displayResult(data) {
+      alert("Is service running: " + data.ServiceRunning);
+   }
+
+   function displayError(data) {
+      alert("We have an error");
+   }
+</script>
+```
+
+* Build project for Android
+```
+ionic cordova build android
+```
+
+
+### Adapted plugin for ionic
+
+https://github.com/felipe-ff/ionic-bgs-core (Thanks felipe-ff)
 
 * Add the plugin to your ionic project
 ```
@@ -37,11 +83,6 @@ ionic cordova plugin add https://github.com/felipe-ff/ionic-bgs-core
 ```
 * Change the project id "io.ionic.starter" by your id.
 
-
-## Older version
-This version of the plugin is intended to work with Cordova 3.0.0+
-
-The older version of the plugin is available at https://github.com/Red-Folder/Cordova-Plugin-BackgroundService.  Please note however that this older repository is unlikely to be maintained going forwards.  It is advised that you move to Cordova 3.x.x as soon as possible.
 
 ## Licence
 Copyright 2013 Red Folder Consultancy Ltd
